@@ -1,4 +1,4 @@
-package com.tinker.shades365.ui.notifications;
+package com.tinker.shades365.ui.quickselector;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.tinker.shades365.R;
 
-public class NotificationsFragment extends Fragment {
+public class QuickSelectorFragment extends Fragment {
 
-    private NotificationsViewModel notificationsViewModel;
+    private QuickSelectorViewModel quickSelectorViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        notificationsViewModel =
-                ViewModelProviders.of(this).get(NotificationsViewModel.class);
+        quickSelectorViewModel =
+                ViewModelProviders.of(this).get(QuickSelectorViewModel.class);
         View root = inflater.inflate(R.layout.fragment_quickselector, container, false);
         final TextView textView = root.findViewById(R.id.text_notifications);
-        notificationsViewModel.getText().observe(this, new Observer<String>() {
+        quickSelectorViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

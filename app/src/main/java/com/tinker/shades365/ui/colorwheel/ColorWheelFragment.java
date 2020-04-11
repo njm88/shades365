@@ -1,4 +1,4 @@
-package com.tinker.shades365.ui.home;
+package com.tinker.shades365.ui.colorwheel;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.tinker.shades365.R;
 
-public class HomeFragment extends Fragment {
+public class ColorWheelFragment extends Fragment {
 
-    private HomeViewModel homeViewModel;
+    private ColorWheelViewModel colorWheelViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel =
-                ViewModelProviders.of(this).get(HomeViewModel.class);
+        colorWheelViewModel =
+                ViewModelProviders.of(this).get(ColorWheelViewModel.class);
         View root = inflater.inflate(R.layout.fragment_colorwheel, container, false);
         final TextView textView = root.findViewById(R.id.text_color_wheel);
-        homeViewModel.getText().observe(this, new Observer<String>() {
+        colorWheelViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

@@ -1,16 +1,16 @@
-package com.tinker.shades365.ui.notifications;
+package com.tinker.shades365.ui.colorwheel;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class NotificationsViewModel extends ViewModel {
+public class ColorWheelViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public NotificationsViewModel() {
+    public ColorWheelViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is notifications fragment");
+        mText.setValue("This is color wheel fragment");
     }
 
     public LiveData<String> getText() {
