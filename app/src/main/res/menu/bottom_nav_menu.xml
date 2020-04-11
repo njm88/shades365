@@ -2,18 +2,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_home"
-        android:icon="@drawable/button_home"
+        android:id="@+id/navigation_colorwheel"
+        android:icon="@drawable/button_colorwheel"
         android:title="@string/title_home" />
 
     <item
         android:id="@+id/navigation_dashboard"
-        android:icon="@drawable/calanderbutton"
+        android:icon="@drawable/calandar_button"
         android:title="@string/title_calendar" />
 
     <item
-        android:id="@+id/navigation_notifications"
-        android:icon="@drawable/regler"
-        android:title="@string/title_notifications" />
+        android:id="@+id/navigation_quickselector"
+        android:icon="@drawable/quick_selector"
+        android:title="@string/title_quickselector" />
 
 </menu>
