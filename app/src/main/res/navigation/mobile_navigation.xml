@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/navigation_colorwheel"
-        android:name="com.tinker.shades365.ui.home.HomeFragment"
+        android:name="com.tinker.shades365.ui.colorwheel.ColorWheelFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_colorwheel" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.tinker.shades365.ui.dashboard.DashboardFragment"
+        android:name="com.tinker.shades365.ui.calendar.CalendarFragment"
         android:label="@string/title_calendar"
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
         android:id="@+id/navigation_quickselector"
-        android:name="com.tinker.shades365.ui.notifications.NotificationsFragment"
+        android:name="com.tinker.shades365.ui.quickselector.QuickSelectorFragment"
         android:label="@string/title_quickselector"
         tools:layout="@layout/fragment_quickselector" />
 </navigation>
