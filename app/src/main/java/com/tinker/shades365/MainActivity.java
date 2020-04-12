@@ -1,5 +1,7 @@
 package com.tinker.shades365;
 
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -26,6 +28,25 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
         getSupportActionBar().hide();
+        navView.setItemIconTintList(createColorStateList());
+    }
+
+    private ColorStateList createColorStateList() {
+        int[][] states = new int[][] {
+                new int[]{android.R.attr.state_pressed},
+                new int[] {-android.R.attr.state_checked},
+                new int[]{android.R.attr.state_enabled},
+                new int[]{} // this should be empty to make default color as we want
+        };
+
+        int[] colors = new int[] {
+                Color.BLACK,
+                Color.GRAY,
+                Color.MAGENTA,
+                Color.WHITE
+        };
+
+        return new ColorStateList(states, colors);
     }
 
 }

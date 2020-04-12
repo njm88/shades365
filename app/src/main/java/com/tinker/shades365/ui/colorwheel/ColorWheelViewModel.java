@@ -10,7 +10,7 @@ public class ColorWheelViewModel extends ViewModel {
 
     public ColorWheelViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is color wheel fragment");
+        mText.setValue("How was your day?");
     }
 
     public LiveData<String> getText() {
