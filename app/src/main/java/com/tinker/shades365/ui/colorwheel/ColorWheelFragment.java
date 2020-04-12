@@ -1,5 +1,6 @@
 package com.tinker.shades365.ui.colorwheel;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -16,6 +17,7 @@ import androidx.lifecycle.ViewModelProviders;
 import com.flask.colorpicker.ColorPickerView;
 import com.flask.colorpicker.OnColorChangedListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.tinker.shades365.ColorStateListCreator;
 import com.tinker.shades365.R;
 
 public class ColorWheelFragment extends Fragment {
@@ -28,10 +30,16 @@ public class ColorWheelFragment extends Fragment {
         @Override
         public void onColorChanged(int selectedColor) {
             Log.i("Test", "Changed color to: " + selectedColor);
-            bottomNavigationView.setOutlineAmbientShadowColor(selectedColor);
-            bottomNavigationView.setOutlineSpotShadowColor(selectedColor);
+            setEnabledNavigationIconToColor(selectedColor);
         }
     };
+
+    private void setEnabledNavigationIconToColor(int color) {
+        bottomNavigationView.setItemIconTintList(ColorStateListCreator.create(Color.BLACK,
+                Color.GRAY,
+                color,
+                Color.WHITE));
+    }
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -46,7 +54,7 @@ public class ColorWheelFragment extends Fragment {
             }
         });
 
-        bottomNavigationView = root.findViewById(R.id.nav_view);
+        bottomNavigationView = getActivity().findViewById(R.id.nav_view);
 
         colorPickerView = root.findViewById(R.id.color_picker_view);
         colorPickerView.addOnColorChangedListener(onColorChangedListener);
