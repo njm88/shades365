@@ -1,15 +1,14 @@
 package com.tinker.shades365.ui.colorwheel;
 
-import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
@@ -23,22 +22,19 @@ import com.tinker.shades365.R;
 public class ColorWheelFragment extends Fragment {
 
     private ColorWheelViewModel colorWheelViewModel;
-    ColorPickerView colorPickerView;
-    BottomNavigationView bottomNavigationView;
+    private ColorPickerView colorPickerView;
+    private BottomNavigationView bottomNavigationView;
 
     private OnColorChangedListener onColorChangedListener = new OnColorChangedListener() {
         @Override
         public void onColorChanged(int selectedColor) {
-            Log.i("Test", "Changed color to: " + selectedColor);
             setEnabledNavigationIconToColor(selectedColor);
         }
     };
 
     private void setEnabledNavigationIconToColor(int color) {
-        bottomNavigationView.setItemIconTintList(ColorStateListCreator.create(Color.BLACK,
-                Color.GRAY,
-                color,
-                Color.WHITE));
+        bottomNavigationView.setItemIconTintList(
+                ColorStateListCreator.create(color, ContextCompat.getColor(getContext(), R.color.colorStars)));
     }
 
     public View onCreateView(@NonNull LayoutInflater inflater,
